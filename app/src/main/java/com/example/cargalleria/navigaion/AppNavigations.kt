@@ -20,13 +20,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.cargalleria.ViewModel.CarViewModel
 import com.example.cargalleria.data.Car
 import com.example.cargalleria.ui.theme.screens.AddCarScreen
 import com.example.cargalleria.ui.theme.screens.DetailScreen
 import com.example.cargalleria.ui.theme.screens.FavoritesScreen
 import com.example.cargalleria.ui.theme.screens.HomeScreen
 import com.example.cargalleria.ui.theme.screens.SettingsScreen
+import com.example.cargalleria.viewModel.CarViewModel
 import com.google.gson.Gson
 
 

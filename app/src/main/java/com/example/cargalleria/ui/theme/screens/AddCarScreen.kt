@@ -48,10 +48,10 @@ import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
-import com.example.cargalleria.ViewModel.CarViewModel
 import com.example.cargalleria.data.addCarToFirebase
 import com.example.cargalleria.data.uploadImageToFirebaseStorage
-import com.example.cargalleria.ui.theme.composes.AppTopBar
+import com.example.cargalleria.View.View.composes.AppTopBar
+import com.example.cargalleria.viewModel.CarViewModel
 import com.google.firebase.auth.FirebaseAuth
 
 val firebaseAuth = FirebaseAuth.getInstance()

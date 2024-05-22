@@ -1,4 +1,4 @@
-package com.example.cargalleria.ui.theme.composes
+package com.example.cargalleria.View.View.composes
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.shape.RoundedCornerShape
