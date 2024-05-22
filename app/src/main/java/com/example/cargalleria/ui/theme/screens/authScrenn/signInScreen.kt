@@ -137,6 +137,7 @@ fun SignInScreen(navController: NavController) {
 
                         if (task.isSuccessful) {
 
+
                             Toast.makeText(context,"Login Please", Toast.LENGTH_LONG).show()
                             navController.navigate("logIn_screen")
 
@@ -165,7 +166,7 @@ fun SignInScreen(navController: NavController) {
 
         }) {
 
-            Text(text = "Sign In")
+            Text(text = "Sign Up")
 
         }
 

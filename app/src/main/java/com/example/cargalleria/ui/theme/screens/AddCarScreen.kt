@@ -9,16 +9,12 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.AddAPhoto
-import androidx.compose.material.icons.filled.Bolt
-import androidx.compose.material.icons.filled.CameraAlt
-import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalTextStyle
@@ -39,7 +35,6 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.cargalleria.ViewModel.CarViewModel
 import com.example.cargalleria.data.Car
 import com.example.cargalleria.navigaion.Screens
 import androidx.compose.material.icons.filled.DateRange
@@ -50,13 +45,16 @@ import androidx.compose.material.icons.filled.Flag
 import androidx.compose.material.icons.filled.Speed
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
-import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.Scaffold
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
+import com.example.cargalleria.ViewModel.CarViewModel
+import com.example.cargalleria.data.addCarToFirebase
+import com.example.cargalleria.data.uploadImageToFirebaseStorage
+import com.example.cargalleria.ui.theme.composes.AppTopBar
+import com.google.firebase.auth.FirebaseAuth
 
-
+val firebaseAuth = FirebaseAuth.getInstance()
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
@@ -223,10 +221,10 @@ fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
                     ),
                     colors = TextFieldDefaults.outlinedTextFieldColors(
                         focusedBorderColor = MaterialTheme.colorScheme.background, // Odaklanıldığında sınır rengi
-                        unfocusedBorderColor = MaterialTheme.colorScheme.onSurface, // Odaklanılmadığında sınır rengi
-                        errorBorderColor = MaterialTheme.colorScheme.secondary // Hata durumunda sınır rengi
+                        unfocusedBorderColor = MaterialTheme.colorScheme.onSurface,
+                        errorBorderColor = MaterialTheme.colorScheme.secondary
                     ),
-                    textStyle = LocalTextStyle.current.copy( // Yazı stilini ayarla
+                    textStyle = LocalTextStyle.current.copy(
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     ),
@@ -305,16 +303,22 @@ fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
                 ElevatedButton(
                     onClick = {
                         if (carName.isNotEmpty() && selectedImageUri != null) {
-                            val newCar = Car(
-                                carName,
-                                selectedImageUri.toString(),
-                                carYear.toInt(),
-                                carHp.toInt(),
-                                carMiles.toInt(),
-                                carPrice.toInt()
-                            ) // Araba ve resim eklenir
-                            carViewModel.addCar(newCar)
-                            navController.navigate(Screens.HomeScreen.name)
+                            uploadImageToFirebaseStorage(selectedImageUri!!, { imageUrl ->
+                                val newCar = Car(
+                                    carName,
+                                    imageUrl,
+                                    carYear.toInt(),
+                                    carHp.toInt(),
+                                    carMiles.toInt(),
+                                    carPrice.toInt(),
+                                    firebaseAuth.currentUser?.uid ?: ""
+                                )
+                                carViewModel.addCar(newCar)
+                                addCarToFirebase(newCar)
+                                navController.navigate(Screens.HomeScreen.name)
+                            }, {
+                                // Handle failure
+                            })
                         }
                     },
                     shape = RoundedCornerShape(12.dp),
@@ -336,6 +340,7 @@ fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
                         fontWeight = FontWeight.Bold
                     )
                 }
+
 
 
             }

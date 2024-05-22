@@ -4,6 +4,7 @@ enum class Screens {
         HomeScreen,
         AddCarScreen,
         FavoritesScreen,
-        SettingScreen
+        SettingScreen,
+        DetailScreen
 
 }
