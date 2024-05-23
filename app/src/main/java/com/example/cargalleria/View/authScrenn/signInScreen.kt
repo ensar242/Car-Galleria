@@ -1,4 +1,4 @@
-package com.example.cargalleria.ui.theme.screens.authScrenn
+package com.example.cargalleria.View.authScrenn
 
 import android.content.ContentValues.TAG
 import android.util.Log

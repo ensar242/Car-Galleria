@@ -1,4 +1,4 @@
-package com.example.cargalleria.View.View.composes
+package com.example.cargalleria.View.composes
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row

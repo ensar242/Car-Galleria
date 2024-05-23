@@ -1,4 +1,4 @@
-package com.example.cargalleria
+package com.example.cargalleria.View
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -6,11 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.cargalleria.navigaion.AppNavigations
-import com.example.cargalleria.navigaion.Screens
-import com.example.cargalleria.ui.theme.screens.HomeScreen
-import com.example.cargalleria.ui.theme.screens.authScrenn.SignInScreen
-import com.example.cargalleria.ui.theme.screens.authScrenn.loginScreen
+import com.example.cargalleria.model.navigaion.AppNavigations
+import com.example.cargalleria.View.authScrenn.SignInScreen
+import com.example.cargalleria.View.authScrenn.loginScreen
+import com.example.cargalleria.View.screens.Screens
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

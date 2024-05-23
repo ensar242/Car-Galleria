@@ -1,10 +1,6 @@
-package com.example.cargalleria.data
+package com.example.cargalleria.model.db
 
 import android.net.Uri
-import android.widget.Toast
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
-import com.google.api.Context
 import com.google.firebase.Firebase
 import com.google.firebase.storage.storage
 import java.util.UUID

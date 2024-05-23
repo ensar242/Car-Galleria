@@ -1,4 +1,4 @@
-package com.example.cargalleria.ui.theme.screens
+package com.example.cargalleria.View.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,8 +20,8 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
-import com.example.cargalleria.data.Car
-import com.example.cargalleria.View.View.composes.AppTopBar
+import com.example.cargalleria.model.Car
+import com.example.cargalleria.View.composes.AppTopBar
 
 @Composable
 fun DetailScreen(car: Car, navController: NavHostController) {

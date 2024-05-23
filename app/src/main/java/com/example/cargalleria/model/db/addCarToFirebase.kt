@@ -1,8 +1,7 @@
-package com.example.cargalleria.data
+package com.example.cargalleria.model.db
 
-import android.net.Uri
+import com.example.cargalleria.model.Car
 import com.google.firebase.Firebase
-import com.google.firebase.auth.auth
 import com.google.firebase.firestore.firestore
 
 

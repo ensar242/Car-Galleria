@@ -1,4 +1,4 @@
-package com.example.cargalleria.ui.theme
+package com.example.cargalleria.View.theme
 
 import android.app.Activity
 import android.os.Build

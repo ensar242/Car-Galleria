@@ -1,4 +1,4 @@
-package com.example.cargalleria.ui.theme.screens
+package com.example.cargalleria.View.screens
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -35,8 +35,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.cargalleria.data.Car
-import com.example.cargalleria.navigaion.Screens
+import com.example.cargalleria.model.Car
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.DirectionsCar
 import androidx.compose.material.icons.filled.Done
@@ -48,9 +47,9 @@ import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
-import com.example.cargalleria.data.addCarToFirebase
-import com.example.cargalleria.data.uploadImageToFirebaseStorage
-import com.example.cargalleria.View.View.composes.AppTopBar
+import com.example.cargalleria.model.db.addCarToFirebase
+import com.example.cargalleria.model.db.uploadImageToFirebaseStorage
+import com.example.cargalleria.View.composes.AppTopBar
 import com.example.cargalleria.viewModel.CarViewModel
 import com.google.firebase.auth.FirebaseAuth
 
@@ -100,24 +99,23 @@ fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
                             contentDescription = "Car name Icon"
                         )
                     },
-                    isError = carName.isEmpty(), // Hata durumunu kontrol et
+                    isError = carName.isEmpty(),
                     keyboardOptions = KeyboardOptions(
 
-                        imeAction = ImeAction.Next // Klavye eylemi olarak "Done"
+                        imeAction = ImeAction.Next
                     ),
                     keyboardActions = KeyboardActions(
                         onDone = {
-                            // "Done" eyleminde ne yapılacak
                             focusRequester.captureFocus()
                             defaultKeyboardAction(imeAction = ImeAction.Next)
                         }
                     ),
                     colors = TextFieldDefaults.outlinedTextFieldColors(
-                        focusedBorderColor = MaterialTheme.colorScheme.background, // Odaklanıldığında sınır rengi
-                        unfocusedBorderColor = MaterialTheme.colorScheme.onSurface, // Odaklanılmadığında sınır rengi
-                        errorBorderColor = MaterialTheme.colorScheme.secondary // Hata durumunda sınır rengi
+                        focusedBorderColor = MaterialTheme.colorScheme.background,
+                        unfocusedBorderColor = MaterialTheme.colorScheme.onSurface,
+                        errorBorderColor = MaterialTheme.colorScheme.secondary
                     ),
-                    textStyle = LocalTextStyle.current.copy( // Yazı stilini ayarla
+                    textStyle = LocalTextStyle.current.copy(
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     ),
@@ -136,24 +134,23 @@ fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
                             contentDescription = "Car Year Icon"
                         )
                     },
-                    isError = carName.isEmpty(), // Hata durumunu kontrol et
+                    isError = carName.isEmpty(),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Number,
-                        imeAction = ImeAction.Next // Klavye eylemi olarak "Done"
+                        imeAction = ImeAction.Next
                     ),
                     keyboardActions = KeyboardActions(
                         onDone = {
-                            // "Done" eyleminde ne yapılacak
                             focusRequester.captureFocus()
                             defaultKeyboardAction(imeAction = ImeAction.Next)
                         }
                     ),
                     colors = TextFieldDefaults.outlinedTextFieldColors(
-                        focusedBorderColor = MaterialTheme.colorScheme.background, // Odaklanıldığında sınır rengi
-                        unfocusedBorderColor = MaterialTheme.colorScheme.onSurface, // Odaklanılmadığında sınır rengi
-                        errorBorderColor = MaterialTheme.colorScheme.secondary // Hata durumunda sınır rengi
+                        focusedBorderColor = MaterialTheme.colorScheme.background,
+                        unfocusedBorderColor = MaterialTheme.colorScheme.onSurface,
+                        errorBorderColor = MaterialTheme.colorScheme.secondary
                     ),
-                    textStyle = LocalTextStyle.current.copy( // Yazı stilini ayarla
+                    textStyle = LocalTextStyle.current.copy(
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     ),
@@ -172,24 +169,23 @@ fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
                             contentDescription = "Car hp Icon"
                         )
                     },
-                    isError = carName.isEmpty(), // Hata durumunu kontrol et
+                    isError = carName.isEmpty(),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Number,
-                        imeAction = ImeAction.Next // Klavye eylemi olarak "Done"
+                        imeAction = ImeAction.Next
                     ),
                     keyboardActions = KeyboardActions(
                         onDone = {
-                            // "Done" eyleminde ne yapılacak
                             focusRequester.captureFocus()
                             defaultKeyboardAction(imeAction = ImeAction.Next)
                         }
                     ),
                     colors = TextFieldDefaults.outlinedTextFieldColors(
-                        focusedBorderColor = MaterialTheme.colorScheme.background, // Odaklanıldığında sınır rengi
-                        unfocusedBorderColor = MaterialTheme.colorScheme.onSurface, // Odaklanılmadığında sınır rengi
-                        errorBorderColor = MaterialTheme.colorScheme.secondary // Hata durumunda sınır rengi
+                        focusedBorderColor = MaterialTheme.colorScheme.background,
+                        unfocusedBorderColor = MaterialTheme.colorScheme.onSurface,
+                        errorBorderColor = MaterialTheme.colorScheme.secondary
                     ),
-                    textStyle = LocalTextStyle.current.copy( // Yazı stilini ayarla
+                    textStyle = LocalTextStyle.current.copy(
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     ),
@@ -243,18 +239,18 @@ fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
                             contentDescription = "Car Price Icon"
                         )
                     },
-                    isError = carName.isEmpty(), // Hata durumunu kontrol et
+                    isError = carName.isEmpty(),
                     keyboardOptions = KeyboardOptions(
                         keyboardType = KeyboardType.Number,
-                        imeAction = ImeAction.Done // Klavye eylemi olarak "Done"
+                        imeAction = ImeAction.Done
                     ),
 
                     colors = TextFieldDefaults.outlinedTextFieldColors(
-                        focusedBorderColor = MaterialTheme.colorScheme.background, // Odaklanıldığında sınır rengi
-                        unfocusedBorderColor = MaterialTheme.colorScheme.onSurface, // Odaklanılmadığında sınır rengi
-                        errorBorderColor = MaterialTheme.colorScheme.secondary // Hata durumunda sınır rengi
+                        focusedBorderColor = MaterialTheme.colorScheme.background,
+                        unfocusedBorderColor = MaterialTheme.colorScheme.onSurface,
+                        errorBorderColor = MaterialTheme.colorScheme.secondary
                     ),
-                    textStyle = LocalTextStyle.current.copy( // Yazı stilini ayarla
+                    textStyle = LocalTextStyle.current.copy(
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     ),
@@ -269,17 +265,16 @@ fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
                         isClicked=true
 
                         imagePickerLauncher.launch("image/*")
-                              // Galeri açılır
 
-                    }, // Düğmeye tıklandığında yapılacak eylem
-                    shape = RoundedCornerShape(12.dp), // Köşeleri yuvarlat
+                    },
+                    shape = RoundedCornerShape(12.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.primary, // Düğmenin arka plan rengi
-                        contentColor = Color.White // Düğmenin metin ve ikon rengi
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = Color.White
                     ),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(8.dp) // Tam genişlik ve aralık
+                        .padding(8.dp)
                 ) {
                    if(isClicked!=true){
                        Icon(imageVector = Icons.Default.AddAPhoto,
@@ -294,7 +289,7 @@ fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
 
 
                     }
-                    Spacer(modifier = Modifier.width(8.dp)) // İkon ve metin arasında boşluk
+                    Spacer(modifier = Modifier.width(8.dp))
                     Text(
                         text = "Select Car Image",
                         fontWeight = FontWeight.Bold
@@ -317,7 +312,6 @@ fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
                                 addCarToFirebase(newCar)
                                 navController.navigate(Screens.HomeScreen.name)
                             }, {
-                                // Handle failure
                             })
                         }
                     },

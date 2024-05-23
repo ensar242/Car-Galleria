@@ -1,4 +1,4 @@
-package com.example.cargalleria.View.View.composes
+package com.example.cargalleria.View.composes
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.text.font.FontWeight
 import coil.compose.AsyncImage
-import com.example.cargalleria.data.Car
+import com.example.cargalleria.model.Car
 
 @Composable
 fun CarCard(car: Car, onClick: () -> Unit) {

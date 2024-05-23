@@ -1,10 +1,9 @@
-package com.example.cargalleria.ui.theme.screens.authScrenn
+package com.example.cargalleria.View.authScrenn
 
 import androidx.compose.foundation.Image
 
 import androidx.compose.ui.res.painterResource
 
-import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -12,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 
 import androidx.compose.material3.FilledTonalButton
@@ -39,7 +37,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.cargalleria.R
-import com.example.cargalleria.navigaion.Screens
+import com.example.cargalleria.View.screens.Screens
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 

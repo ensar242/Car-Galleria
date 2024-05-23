@@ -1,4 +1,4 @@
-package com.example.cargalleria.navigaion
+package com.example.cargalleria.model.navigaion
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -6,6 +6,7 @@ import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.ui.graphics.vector.ImageVector
+import com.example.cargalleria.View.screens.Screens
 
 data class NavItem(
     val label:String,
