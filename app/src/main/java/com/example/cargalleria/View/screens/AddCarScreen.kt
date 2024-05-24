@@ -47,16 +47,19 @@ import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.cargalleria.model.db.addCarToFirebase
 import com.example.cargalleria.model.db.uploadImageToFirebaseStorage
 import com.example.cargalleria.View.composes.AppTopBar
 import com.example.cargalleria.viewModel.CarViewModel
 import com.google.firebase.auth.FirebaseAuth
+import java.util.UUID
 
 val firebaseAuth = FirebaseAuth.getInstance()
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
+fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) {
     var carName by remember { mutableStateOf("") }
     var carYear by remember {
         mutableStateOf("")
@@ -300,6 +303,7 @@ fun AddCarScreen(carViewModel: CarViewModel, navController: NavHostController) {
                         if (carName.isNotEmpty() && selectedImageUri != null) {
                             uploadImageToFirebaseStorage(selectedImageUri!!, { imageUrl ->
                                 val newCar = Car(
+                                    UUID.randomUUID().toString(),
                                     carName,
                                     imageUrl,
                                     carYear.toInt(),

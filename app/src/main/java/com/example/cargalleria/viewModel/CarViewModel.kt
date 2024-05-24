@@ -9,7 +9,7 @@ import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
 import com.google.firebase.firestore.toObject
 
-class CarViewModel : ViewModel() {
+class CarViewModel : ViewModel(){
     private val _cars = MutableLiveData<List<Car>>(emptyList())
     private val db = Firebase.firestore
     private val carsCollection = db.collection("cars")
@@ -30,6 +30,18 @@ class CarViewModel : ViewModel() {
             }
             .addOnFailureListener { exception ->
                 Log.w("CarViewModel", "Error getting documents: ", exception)
+            }
+    }
+    fun deleteCar(car: Car) {
+        carsCollection.document(car.id)
+            .delete()
+            .addOnSuccessListener {
+                Log.d("CarViewModel", "Car deleted successfully from Firestore")
+                // Optionally, you can remove the car locally as well
+                _cars.value = _cars.value?.filter { it.id != car.id }
+            }
+            .addOnFailureListener { exception ->
+                Log.w("CarViewModel", "Error deleting car from Firestore", exception)
             }
     }
 }

@@ -77,7 +77,7 @@ fun AppNavigations() {
             composable(route = "${Screens.DetailScreen.name}/{car}") { backStackEntry ->
                 val carJson = backStackEntry.arguments?.getString("car")
                 val car = Gson().fromJson(carJson, Car::class.java)
-                DetailScreen(car, navController)
+                DetailScreen(car, navController,carViewModel)
             }
             composable(route = Screens.FavoritesScreen.name) {
                 FavoritesScreen()
