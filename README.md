@@ -20,7 +20,7 @@ Projenin çalışması için gerekli adımlar aşağıda belirtilmiştir.
 
 ### Adımlar
 
-1. Flutter SDK ve Dart SDK'yı bilgisayarınıza yükleyin.
+1. Kotlin Sdk bilgisayarınıza yükleyin.
 2. Bu repository'yi klonlayın:
     ```sh
     git clone https://github.com/kullaniciadi/car-galeria.git
