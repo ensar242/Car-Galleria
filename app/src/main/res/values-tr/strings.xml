@@ -1,0 +1,44 @@
+<resources>
+    <string name="Language">Dil Ayari</string>
+    <string name="Languagedesc">Uygulamanin dilini degistir</string>
+    <string name="Profile">Profil</string>
+    <string name="ProfileDesc">Profil bilgilerinizi güncelleyin</string>
+    <string name="Notifications">Bildirimler</string>
+    <string name="NotificationsDesc">Bildirim ayarlarını yönetin</string>
+    <string name="Privacy">Gizlilik</string>
+    <string name="PrivacyDesc">Gizlilik ayarlarını yönetin</string>
+    <string name="Logout">Çıkış Yap</string>
+    <string name="LogoutDesc">Hesabınızdan çıkış yapın</string>
+    <string name="Theme">Tema</string>
+    <string name="ThemeDesc">Koyu temayi acin veya kapatin</string>
+    <string name="FavoritesDesc">Favori Araba Yok</string>
+    <string name="Favorite">Favoriler</string>
+    <string name="Settings">Ayarlar</string>
+    <string name="CarName">Araç Adı</string>
+    <string name="CarYear">Araç Yılı</string>
+    <string name="CarHp">Araç Beygir Gücü</string>
+    <string name="CarMiles">Araç Kilometresi</string>
+    <string name="CarPrice">Araç Fiyatı</string>
+    <string name="SelectCarImage">Araç Resmi Seçin</string>
+    <string name="AddCar">Araç Ekle</string>
+    <string name="Year">Araç Yılı</string>
+    <string name="Hp">Hp</string>
+    <string name="Km">Kilometre</string>
+    <string name="Price">Fiyat</string>
+    <string name="DeleteCar">Araç Sil</string>
+    <string name="DeleteCarConfirmation">Bu aracı silmek istediğinizden emin misiniz?</string>
+    <string name="Confirm">Onayla</string>
+    <string name="Cancel">İptal</string>
+    <string name="select_language">Dil Seciniz</string>
+    <string name="ok">Tamam</string>
+    <string name="LanguageDesc">Uygulamanın dilini değiştir</string>
+    <string name="search">Araba ara</string>
+    <string name="welcome">Hosgeldiniz</string>
+    <string name="login"> Hesabiniza giris yapiniz</string>
+    <string name="loginB">Giris</string>
+    <string name="DontHave">Hessabiniz yokmu ? Simdi Olustrun. </string>
+    <string name="home">Ev</string>
+    <string name="add">Ekle</string>
+
+
+</resources>
