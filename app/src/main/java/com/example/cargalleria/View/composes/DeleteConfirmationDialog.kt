@@ -6,8 +6,11 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
+import com.example.cargalleria.R
+
 @Composable
 fun DeleteConfirmationDialog(
     onConfirm: () -> Unit,
@@ -15,20 +18,22 @@ fun DeleteConfirmationDialog(
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        title = { Text("Delete Car") },
-        text = { Text("Are you sure you want to delete this car?") },
+        title = { Text(stringResource(id = R.string.DeleteCar), color = MaterialTheme.colorScheme.primary)  },
+
+        text = { Text(stringResource(id = R.string.DeleteCarConfirmation), color = MaterialTheme.colorScheme.onBackground) },
         confirmButton = {
             Button(
                 onClick = onConfirm,
-                colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.error)
+                colors = ButtonDefaults.buttonColors(  MaterialTheme.colorScheme.error)
             ) {
-                Text("Confirm", color = Color.White)
+                Text(stringResource(id = R.string.Confirm), color = MaterialTheme.colorScheme.onError)
             }
         },
         dismissButton = {
             TextButton(onClick = onDismiss) {
-                Text("Cancel")
+                Text(stringResource(id = R.string.Cancel), color = MaterialTheme.colorScheme.primary)
             }
-        }
+        },
+        containerColor = MaterialTheme.colorScheme.surface,
     )
 }

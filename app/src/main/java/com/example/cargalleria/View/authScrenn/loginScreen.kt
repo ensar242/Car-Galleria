@@ -30,6 +30,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -42,9 +43,8 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 
 @Composable
-fun loginScreen(navController: NavController) {
+fun LoginScreen(navController: NavController) {
     val firebaseAuth = FirebaseAuth.getInstance()
-    val context = LocalContext.current
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -68,9 +68,9 @@ fun loginScreen(navController: NavController) {
                 modifier = Modifier.size(350.dp)
             )
             Spacer(modifier = Modifier.padding(0.dp))
-            Text(text = "Welcome Back", fontSize = 28.sp, fontWeight = FontWeight.Bold)
+            Text(text = stringResource(id = R.string.welcome), fontSize = 28.sp, fontWeight = FontWeight.Bold)
             Spacer(modifier = Modifier.height(5.dp))
-            Text(text = "Login to your account")
+            Text(text = stringResource(id = R.string.login))
             Spacer(modifier = Modifier.height(12.dp))
             OutlinedTextField(
                 value = email,
@@ -115,11 +115,11 @@ fun loginScreen(navController: NavController) {
                             snackbarHostState.showSnackbar("Please enter email and password")
                         }}}
             ) {
-                Text(text = "Login")
+                Text(text = stringResource(id = R.string.loginB))
             }
 
             TextButton(onClick = { navController.navigate("signIn_Screen") }) {
-                Text("Don't have an account? Sign Up Now.", color = Color.Black)
+                Text(stringResource(id = R.string.DontHave), color = Color.Black)
             }
         }
     }

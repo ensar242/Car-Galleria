@@ -1,19 +1,17 @@
 package com.example.cargalleria.model.db
 
-import androidx.compose.runtime.internal.illegalDecoyCallException
+import androidx.lifecycle.MutableLiveData
 import com.example.cargalleria.model.Car
 import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.firestore
 
 
 
 fun addCarToFirebase(car: Car) {
     val db = Firebase.firestore
-
-    // Create a document reference with car's ID
     val carDocRef = db.collection("cars").document(car.id)
 
-    // Convert car object to a map
     val carData = hashMapOf(
         "id" to car.id,
         "name" to car.name,
@@ -25,7 +23,6 @@ fun addCarToFirebase(car: Car) {
         "userId" to car.userid
     )
 
-    // Set the data to the document reference
     carDocRef
         .set(carData)
         .addOnSuccessListener {

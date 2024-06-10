@@ -1,3 +1,44 @@
 <resources>
-    <string name="app_name">CarGalleria</string>
+    <string name="app_name" translatable="false">CarGalleria</string>
+    <string name="Language">Language</string>
+    <string name="Languagedesc">Change the app\'s language</string>
+    <string name="Profile">Profile</string>
+    <string name="ProfileDesc">Update your profile information</string>
+    <string name="Notifications">Notifications</string>
+    <string name="NotificationsDesc">Manage notification settings</string>
+    <string name="Privacy">Privacy</string>
+    <string name="PrivacyDesc">Manage privacy settings</string>
+    <string name="Logout">Logout</string>
+    <string name="LogoutDesc">Log out of your account</string>
+    <string name="Theme">Theme</string>
+    <string name="ThemeDesc">Enable or disable dark theme</string>
+    <string name="FavoritesDesc">No Favorite Car</string>
+    <string name="Favorite">Favorite</string>
+    <string name="Settings">Settings</string>
+    <string name="CarName">Car Name</string>
+    <string name="CarYear">Car Year</string>
+    <string name="CarHp">Car HP</string>
+    <string name="CarMiles">Car KM</string>
+    <string name="CarPrice">Car Price</string>
+    <string name="SelectCarImage">Select Car Image</string>
+    <string name="AddCar">Add Car</string>
+    <string name="Year">Year</string>
+    <string name="Hp">Hp</string>
+    <string name="Km">Km</string>
+    <string name="Price">Price</string>
+
+    <string name="DeleteCar">Delete Car</string>
+    <string name="DeleteCarConfirmation">Are you sure you want to delete this car?</string>
+    <string name="Confirm">Confirm</string>
+    <string name="Cancel">Cancel</string>
+    <string name="select_language">Select Language</string>
+    <string name="ok">Ok</string>
+    <string name="LanguageDesc">Change the language of the app</string>
+    <string name="search">Search cars ...</string>
+    <string name="welcome">Welcome back</string>
+    <string name="login">Login to your account</string>
+    <string name="loginB">Login</string>
+    <string name="DontHave">Don\'t have an account? Create now.</string>
+    <string name="home">Home</string>
+    <string name="add">Add</string>
 </resources>

@@ -46,9 +46,9 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.cargalleria.R
 import com.example.cargalleria.model.db.addCarToFirebase
 import com.example.cargalleria.model.db.uploadImageToFirebaseStorage
 import com.example.cargalleria.View.composes.AppTopBar
@@ -78,9 +78,9 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
 
 
     val imagePickerLauncher = rememberLauncherForActivityResult(
-        ActivityResultContracts.GetContent() // Galeriden resim seçmek için
+        ActivityResultContracts.GetContent()
     ) { uri: Uri? ->
-        selectedImageUri = uri // Uri'yi saklar
+        selectedImageUri = uri
     }
     Scaffold(
         topBar = { AppTopBar() },
@@ -95,7 +95,7 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
                 OutlinedTextField(
                     value = carName,
                     onValueChange = { carName = it },
-                    label = { Text("Car Name", color = Color.Black) },
+                    label = { Text(stringResource(id = R.string.CarName), color = MaterialTheme.colorScheme.onBackground) },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.DirectionsCar,
@@ -119,6 +119,7 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
                         errorBorderColor = MaterialTheme.colorScheme.secondary
                     ),
                     textStyle = LocalTextStyle.current.copy(
+                        color= MaterialTheme.colorScheme.onBackground,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     ),
@@ -130,7 +131,7 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
                 OutlinedTextField(
                     value = carYear,
                     onValueChange = { carYear = it },
-                    label = { Text("Car Year", color = Color.Black) },
+                    label = { Text(stringResource(id = R.string.CarYear), color = MaterialTheme.colorScheme.onBackground) },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.DateRange,
@@ -154,6 +155,7 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
                         errorBorderColor = MaterialTheme.colorScheme.secondary
                     ),
                     textStyle = LocalTextStyle.current.copy(
+                        color= MaterialTheme.colorScheme.onBackground,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     ),
@@ -165,7 +167,7 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
                 OutlinedTextField(
                     value = carHp,
                     onValueChange = { carHp = it },
-                    label = { Text("Car hp", color = Color.Black) },
+                    label = { Text(stringResource(id = R.string.CarHp), color = MaterialTheme.colorScheme.onBackground) },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Speed,
@@ -189,6 +191,7 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
                         errorBorderColor = MaterialTheme.colorScheme.secondary
                     ),
                     textStyle = LocalTextStyle.current.copy(
+                        color= MaterialTheme.colorScheme.onBackground,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     ),
@@ -200,7 +203,7 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
                 OutlinedTextField(
                     value = carMiles,
                     onValueChange = { carMiles = it },
-                    label = { Text("Car Km", color = Color.Black) },
+                    label = { Text(stringResource(id = R.string.CarMiles), color = MaterialTheme.colorScheme.onBackground) },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Flag,
@@ -221,9 +224,11 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
                     colors = TextFieldDefaults.outlinedTextFieldColors(
                         focusedBorderColor = MaterialTheme.colorScheme.background, // Odaklanıldığında sınır rengi
                         unfocusedBorderColor = MaterialTheme.colorScheme.onSurface,
+                        unfocusedTextColor = MaterialTheme.colorScheme.onSurface,
                         errorBorderColor = MaterialTheme.colorScheme.secondary
                     ),
                     textStyle = LocalTextStyle.current.copy(
+                        color= MaterialTheme.colorScheme.onBackground,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     ),
@@ -235,7 +240,7 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
                 OutlinedTextField(
                     value = carPrice,
                     onValueChange = { carPrice = it },
-                    label = { Text("Car Price", color = Color.Black) },
+                    label = { Text(stringResource(id = R.string.CarPrice), color = MaterialTheme.colorScheme.onBackground) },
                     leadingIcon = {
                         Icon(
                             imageVector = Icons.Default.Euro,
@@ -254,6 +259,7 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
                         errorBorderColor = MaterialTheme.colorScheme.secondary
                     ),
                     textStyle = LocalTextStyle.current.copy(
+                        color= MaterialTheme.colorScheme.onBackground,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     ),
@@ -294,7 +300,7 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
                     }
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
-                        text = "Select Car Image",
+                        text = stringResource(id = R.string.SelectCarImage),
                         fontWeight = FontWeight.Bold
                     )
                 }
@@ -334,7 +340,7 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
-                        text = "Add Car",
+                        text = stringResource(id = R.string.AddCar),
                         fontWeight = FontWeight.Bold
                     )
                 }
@@ -347,5 +353,6 @@ fun AddCarScreen(carViewModel : CarViewModel, navController: NavHostController) 
 
     )
 }
+
 
 
